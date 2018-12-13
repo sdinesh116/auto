@@ -1,6 +1,6 @@
 variable "subscription_id" {
         description     = "Subscription ID"
-        default         = "0387ddf0-eea2-4265-a843-4f7c61f6ab68"
+        default         = "SUBSCRIPTIONID"
 }
 
 variable "client_id" {
