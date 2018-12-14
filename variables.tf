@@ -5,22 +5,22 @@ variable "subscription_id" {
 
 variable "client_id" {
         description     = "Client ID"
-        default         = ""
+        default         = "CLIENTID"
 }
 
 variable "client_secret" {
         description     = "Client Secret"
-        default         = ""
+        default         = "CLINETSECRET"
 }
 
 variable "tenant_id" {
         description     = "tenant ID"
-        default         = ""
+        default         = "TENNANTID"
 }
 
 variable "rgname" {
         description     = "Resource Group Name"
-        default         = "test1234ak282"
+        default         = "test123"
 }
 
 variable "location" {
