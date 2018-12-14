@@ -10,12 +10,12 @@ variable "client_id" {
 
 variable "client_secret" {
         description     = "Client Secret"
-        default         = "CLINETSECRET"
+        default         = "CLIENTSECRET"
 }
 
 variable "tenant_id" {
         description     = "tenant ID"
-        default         = "TENNANTID"
+        default         = "TENANTID"
 }
 
 variable "rgname" {
