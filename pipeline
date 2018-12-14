@@ -1,0 +1,25 @@
+node {
+   stage('Preparation') {
+      git credentialsId: 'git', url: 'https://github.com/sdinesh116/auto.git'
+	  sh "export PATH=/usr/local/bin/:$PATH"
+	  sh "terraform init"
+
+   }
+   stage('manipulate the tf files') {
+      // manipulate the variables files 
+      sh 'sed -ie "s|SUBSCRIPTIONID|$SUBSCRIPTION_ID|g" variables.tf'
+      sh 'sed -ie "s|CLIENTID|$CLIENT_ID|g" variables.tf'
+      sh 'sed -ie "s|CLIENTSECRET|$CLIENT_SECRET|g" variables.tf'
+      sh 'sed -ie "s|TENANTID|$TENANT_ID|g" variables.tf'
+
+	  sh 'cat variables.tf'
+    }
+   stage('terrafrom plan') {
+      // perfrm the terraform plan
+	  sh "terraform plan -out=terraform.plan"
+   }
+   stage('terrafrom apply') {
+      // perfrm the terraform plan 
+	  sh "terraform apply -auto-approve"
+   }
+   }
